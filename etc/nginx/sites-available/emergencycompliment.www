@@ -1,0 +1,20 @@
+server {
+    listen 80;
+    server_name emergencycompliment.org.ua;
+
+    charset utf-8;
+    autoindex on;
+    access_log /var/log/nginx/emergencycompliment.www.access.log;
+    error_log /var/log/nginx/emergencycompliment.www.error.log;
+
+    set $root /var/www/emergencycompliment.www;
+    root $root;
+
+}
+
+server {
+    listen 80;
+    server_name www.emergencycompliment.org.ua;
+
+    rewrite ^/(.*) http://emergencycompliment.org.ua permanent;
+}
