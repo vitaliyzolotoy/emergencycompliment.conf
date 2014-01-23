@@ -10,6 +10,10 @@ server {
     set $root /var/www/emergencycompliment.www;
     root $root;
 
+    location / {
+        root $root;
+    }
+
 }
 
 server {
